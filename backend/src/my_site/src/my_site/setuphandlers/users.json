@@ -1,0 +1,19 @@
+{
+  "portal": [
+    {
+      "email": "ialokkumarsing0@gmail.com",
+      "properties": {
+        "fullname": "my-site",
+        "location": "World"
+      },
+      "groups": [
+      ],
+      "roles": [
+        "Member"
+      ],
+      "username": "my-site"
+    }
+  ],
+    "team": [
+  ]
+}

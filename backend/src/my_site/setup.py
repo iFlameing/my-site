@@ -1,4 +1,5 @@
 """Installer for the my_site package."""
+
 from pathlib import Path
 from setuptools import find_packages
 from setuptools import setup
@@ -49,6 +50,7 @@ setup(
         "Plone",
         "prettyconf",
         "plone.api",
+        "collective.blog",
     ],
     extras_require={
         "test": [

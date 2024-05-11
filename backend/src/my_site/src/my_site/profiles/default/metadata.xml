@@ -4,6 +4,7 @@
   <dependencies>
     <dependency>profile-plone.volto:default</dependency>
     <dependency>plone.app.caching:default</dependency>
+    <dependency>profile-collective.blog:default</dependency>
     <dependency>plone.app.caching:with-caching-proxy</dependency>
   </dependencies>
 </metadata>

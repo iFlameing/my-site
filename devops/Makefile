@@ -73,6 +73,12 @@ docker-setup:  ## Docker: Setup remote docker context
 	@echo "$(GREEN)==> Docker: Setup remote docker context named ${CONTEXT} $(RESET)"
 	${DOCKER} context create ${CONTEXT} --description "my-site deployment" --docker "host=${CONTEXT_HOST}"
 
+
+.PHONY: docker-setup-rm
+docker-setup-rm:  ## Docker: Setup remote docker context
+	@echo "$(GREEN)==> Docker: Setup remote docker context named ${CONTEXT} $(RESET)"
+	${DOCKER} context rm ${CONTEXT}
+
 .PHONY: docker-login
 docker-login:  ## Docker: Login
 	@echo "$(GREEN)==> Docker: Login$(RESET)"
@@ -91,7 +97,7 @@ server-setup: bin/ansible ## Server: Configure a remote server
 .PHONY: stack-deploy
 stack-deploy: ## Deploy stacks: $(STACK_NAME)
 	@echo "$(GREEN)==> Stack $(STACK_NAME): Deploy to context $(DEPLOY_ENV) $(RESET)"
-	${DOCKER_CMD_CONTEXT} stack deploy -c stacks/my-site.example.com.yml $(STACK_NAME)
+	${DOCKER_CMD_CONTEXT} stack deploy -c stacks/my-site.example.com.yml $(STACK_NAME) --with-registry-auth
 
 .PHONY: stack-create-site
 stack-create-site: ## Create a new site stacks: $(STACK_NAME)
